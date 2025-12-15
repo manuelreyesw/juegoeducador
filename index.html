@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atawallpa, Aventura en la Historia Ecuatoriana</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="juego-contenedor">
+        <h1>Atawallpa, Aventura en la Historia</h1>
+        
+        <div id="modal-inicio" class="modal">
+            <div class="modal-contenido">
+                <h2>Ingresa tu Nombre</h2>
+                <input type="text" id="nombre-jugador" placeholder="Tu nombre aquí" maxlength="20">
+                <button onclick="iniciarJuego()">¡Empezar Aventura!</button>
+                <p class="nota">Usa las flechas (↑↓←→) para mover al personaje.</p>
+            </div>
+        </div>
+        <div id="contenido-juego" style="display: none;"> 
+            <div class="hud">
+                <p>Monedas: <span id="contador-monedas">0</span> / 10</p>
+                <p>Vidas: <span id="contador-vidas">3</span></p>
+            </div>
+
+            <div class="escenario">
+                <div id="personaje" class="personaje">🧑‍🌾</div>
+                
+                <div id="moneda1" class="moneda" data-index="0">🪙</div>
+                <div id="moneda2" class="moneda" data-index="1">🪙</div>
+                <div id="moneda3" class="moneda" data-index="2">🪙</div>
+                <div id="moneda4" class="moneda" data-index="3">🪙</div>
+                <div id="moneda5" class="moneda" data-index="4">🪙</div>
+                <div id="moneda6" class="moneda" data-index="5">🪙</div>
+                <div id="moneda7" class="moneda" data-index="6">🪙</div>
+                <div id="moneda8" class="moneda" data-index="7">🪙</div>
+                <div id="moneda9" class="moneda" data-index="8">🪙</div>
+                <div id="moneda10" class="moneda" data-index="9">🪙</div>
+                
+                <div id="bomba1" class="bomba">💀</div>
+                <div id="bomba2" class="bomba">💀</div>
+                <div id="bomba3" class="bomba">💀</div>
+                <div id="bomba4" class="bomba">💀</div>
+            </div>
+
+            <div id="modal-pregunta" class="modal" style="display: none;">
+                <div class="modal-contenido">
+                    <h2 id="texto-pregunta">¿Pregunta de Historia aquí?</h2>
+                    <div id="opciones-respuesta" class="opciones">
+                    </div>
+                </div>
+            </div>
+
+            <div id="mensaje-final" class="modal" style="display: none;">
+                <div class="modal-contenido">
+                    <h2 id="texto-final"></h2>
+                    <button onclick="location.reload()">Jugar de Nuevo</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <audio id="musica-fondo" loop>
+        <source src="musica_andina.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

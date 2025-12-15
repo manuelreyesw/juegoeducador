@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e0f2f1;
+    margin: 0;
+}
+
+.juego-contenedor {
+    background-color: #ffffff;
+    border: 3px solid #004d40;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+}
+
+.hud {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #00796b;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.escenario {
+    position: relative;
+    width: 100%;
+    height: 300px; 
+    background-color: #a5d6a7;
+    border: 2px solid #388e3c;
+    border-radius: 5px;
+    overflow: hidden; 
+}
+
+/* Personaje y Objetos */
+.personaje, .moneda, .bomba {
+    position: absolute;
+    font-size: 45px;
+    transition: left 0.05s linear, bottom 0.05s linear; 
+}
+
+.personaje {
+    left: 10%;
+    bottom: 10px; 
+}
+
+/* 10 Monedas (Posiciones) */
+#moneda1 { left: 10%; bottom: 50px; }
+#moneda2 { left: 25%; bottom: 120px; }
+#moneda3 { left: 40%; bottom: 200px; }
+#moneda4 { left: 55%; bottom: 80px; }
+#moneda5 { left: 70%; bottom: 10px; }
+#moneda6 { left: 15%; bottom: 220px; }
+#moneda7 { left: 35%; bottom: 150px; }
+#moneda8 { left: 60%; bottom: 250px; }
+#moneda9 { left: 80%; bottom: 180px; }
+#moneda10 { left: 90%; bottom: 100px; }
+
+/* 4 Peligros (Calaveras - Posiciones) */
+#bomba1 { left: 20%; bottom: 10px; color: red; }
+#bomba2 { left: 50%; bottom: 150px; color: red; }
+#bomba3 { left: 75%; bottom: 50px; color: red; }
+#bomba4 { left: 5%; bottom: 200px; color: red; }
+
+/* Modal de Preguntas e Inicio (el modal se reutiliza para ambos) */
+.modal {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8); /* Oscurecer para el modal de inicio */
+    backdrop-filter: blur(5px);
+    display: flex; /* Asegura que se muestre en el inicio */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contenido {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#nombre-jugador {
+    padding: 10px;
+    margin: 15px 0;
+    width: 80%;
+    border: 2px solid #004d40;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.opciones button {
+    background-color: #004d40;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px auto;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    width: 90%;
+}
+
+.opciones button:hover {
+    background-color: #00796b;
+}
